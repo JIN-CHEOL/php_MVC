@@ -1,6 +1,48 @@
+<<<<<<< HEAD
+﻿<?php
+/**
+ * Created by IntelliJ IDEA.
+ * User: BBUGGE
+ * Date: 2018-01-06
+ * Time: 오후 10:47
+ */
+
+    require_once "./indexController.php";
+    require_once "./commonController.php";
+    $controller = new indexController();
+    $common = new commonController;
+
+    $param = $controller->param;
+
+
+?>
 <link rel="stylesheet" href="./resource/css/style_.css">
 <script src="./resource/js/jquery-3.2.1.min.js"></script>
 <script src="./resource/js/common_util.js"></script>
+<script type="text/javascript">
+    $(function(){
+
+    })
+    function login(){
+        location.replace("/login/login.php");
+    }
+    function logout() {
+        location.replace("/login/logout.php");
+        //var id = sessionStorage.getItem('id');
+        //var permit =sessionStorage.getItem('permit');
+
+        //debugger;
+//        alert("로그아웃 되었습니다.");
+//        location.replace("/");
+    }
+
+</script>
+
+=======
+<link rel="stylesheet" href="./resource/css/style_.css">
+<script src="./resource/js/jquery-3.2.1.min.js"></script>
+<script src="./resource/js/common_util.js"></script>
+>>>>>>> dc9c60d3a6ee50334388aa2c18642a258e710305
 <style>
     .board{
         width: 200px;
