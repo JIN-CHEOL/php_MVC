@@ -54,7 +54,7 @@ class loginController
             $_SESSION['client'] = $data;
 
             echo "<script>location.replace('/');</script>";
-        } else if(($id!="" || $pass!="") && $data[0]!=1){
+        } else if(($id!="" || $pass!="") && $data['F_ID']!=1){
             echo "<script>alert('아이디와 비밀번호가 맞지 않습니다.');</script>";
         }
     }
