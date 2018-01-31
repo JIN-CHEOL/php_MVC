@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿<?php
 /**
  * Created by IntelliJ IDEA.
@@ -38,11 +37,6 @@
 
 </script>
 
-=======
-<link rel="stylesheet" href="./resource/css/style_.css">
-<script src="./resource/js/jquery-3.2.1.min.js"></script>
-<script src="./resource/js/common_util.js"></script>
->>>>>>> dc9c60d3a6ee50334388aa2c18642a258e710305
 <style>
     .board{
         width: 200px;
