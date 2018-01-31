@@ -15,7 +15,7 @@ require_once '/config/DB.php';
 
 class indexController
 {
-    public $title="Test Homepage";
+    public $title="";
     public $param;
 
     public function indexController(){
