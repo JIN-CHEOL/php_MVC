@@ -1,0 +1,87 @@
+/*--------------------공통부분--------------------------*/
+body{
+    margin: 0;
+    background: url("../image/background_img.jpg") no-repeat;
+    background-size: cover;
+}
+a{
+    text-decoration:none;
+    color: #000;
+}
+a:hover
+{
+    text-decoration:none;
+    color: #a294a5;
+}
+/*----------------------------header--------------*/
+#header{
+    height:10%;
+    width: 100%;
+    background-color: gainsboro;
+    margin: 0;
+}
+.header_logo{
+    font-size: 30px; font-weight: 700;
+    margin-left: 5%;
+}
+.header_login_form
+{
+    margin-left: 28%;
+}
+.header_login
+{
+    height:10%;
+    width:30%;
+}
+.header_button{
+    height:50%;
+    width: 17%;
+    margin-top: 10px;
+    background-color: #000B33;
+    color: white;
+    outline: 0;
+    border:0;
+}
+.main_logo{
+    font-size: 70px; font-weight: 700;
+    position: absolute;
+    top:15%;
+    left:10%;
+}
+/*-----------------------------------center------------------*/
+#main_center{
+    height:85%;
+    width:100%;
+}
+#center{
+    height:90%;
+    width:100%;
+}
+/*-----------------------------------footer------------------*/
+#footer{
+    height: 15%;
+    width: 100%;
+    letter-spacing: normal;
+    background-color: gainsboro;
+}
+span
+{
+    height: 90%;
+    width:32%;
+    float: left;
+    padding:10px 0 0 10px;
+}
+.login
+{
+    height:40%;
+    width:48%;
+}
+.button{
+    height:40%;
+    width: 97%;
+    margin-top: 10px;
+    background-color: #000B33;
+    color: white;
+    outline: 0;
+    border:0;
+}
