@@ -14,16 +14,28 @@ require_once '../config/DB.php';
 class boardController
 {
     public $param;
+    public $db;
     public function boardController(){
         $this->param = new param;
     }
     public function showBoard(){
         $db = new DB;
         $db->DBConn();
-        $db->query = "";
-   //     $db->DBQuery();
-
-   //     $db->DBOut();
+        $db->query = "SELECT 
+                        F_IDX,
+                        F_TITLE,
+                        F_CONTENT,
+                        F_WRITER,
+                        F_HIT,
+                        F_WRITE_DATE
+                        FROM t_board";
+        $db->DBQuery();
+        if($db->result){
+            $this->db = $db;
+        }else{
+            echo "<script>alert('쿼리실행 실패!!');location.href='/'</script>";
+            $db->DBOut();
+        }
     }
     public function insertBoard(){
         $db = new DB;

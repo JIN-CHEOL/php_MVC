@@ -9,7 +9,6 @@
     require_once "../param.php";
     require_once "../config/DB.php";
 
-//    echo "<script>alert('".$_POST['id']."');</script>";
     $param = new param;
     $db =new DB;
     $db->DBConn();
@@ -18,17 +17,11 @@
     if($db->result){
         $data = $db->result->fetch_assoc();
 
-//        echo "<script>alert('".$data[0]."');</script>";
         echo(json_encode(array("F_CNT" => $data['F_CNT'])));
     }else{
         echo "<script>alert('쿼리실행 실패!!');</script>";
     }
 
-//    if($data['F_CNT']>0){
-//        echo "<script>alert('id가 존재합니다');</script>";
-//    }else{
-//        echo "<script>alert('사용가능한 ID 입니다.');</script>";
-//    }
 
     $db->DBOut();
 ?>

@@ -21,7 +21,39 @@ $param = $controller->param;
     require_once '../header.php';
     ?>
 </div>
+<script type="text/javascript">
+    function viewDetail(idx){
+        var form = new CommonForm('commonForm');
+        form.addParam('idx',idx);
+        form.setUrl('/board/board_detail.php');
+        form.submit();
+    }
+    function insertBoard(){
+        location.href='/board/board_reg.php';
+    }
+</script>
 <div id="center">
-    <!--여기에 게시판 만드시면되요-->
+    <table>
+        <tr>
+            <th>No.</th>
+            <th>제목</th>
+            <th>등록자</th>
+            <th>조회수</th>
+            <th>등록일</th>
+        </tr>
+        <?php
+            while($row = $controller->db->result->fetch_assoc()){
+                echo "<tr>
+                            <td>".$row['F_IDX']."</td>
+                            <td><a href='#' onclick=javascript:viewDetail('".$row['F_IDX']."')>".$row['F_TITLE']."</a></td>
+                            <td>".$row['F_WRITER']."</td>
+                            <td>".$row['F_HIT']."</td>
+                            <td>".$row['F_WRITE_DATE']."</td>
+                       </tr>";
+            }
+            $controller->db->DBOut();
+        ?>
+    </table>
+    <div><button type="button" onclick="insertBoard();">글등록</button></div>
 </div>
 
