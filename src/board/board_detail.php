@@ -76,7 +76,11 @@
     </table>
     <div>
         <button type="button" onclick="updateBoard('<?php echo $data['F_IDX']?>');">수정</button>
-        <button type="button" onclick="deleteBoard('<?php echo $data['F_IDX']?>');">삭제</button>
+        <?php
+            if($data['F_WRITER'] == $param->session('client')['F_ID']){
+                echo "<button type='button' onclick=deleteBoard('".$data['F_IDX']."')>삭제</button>";
+            }
+        ?>
     </div>
     <div>
         <button type="button" onclick="location.href='/board/board.php'">목록</button>

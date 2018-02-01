@@ -42,14 +42,19 @@ $param = $controller->param;
             <th>등록일</th>
         </tr>
         <?php
-            while($row = $controller->db->result->fetch_assoc()){
-                echo "<tr>
-                            <td>".$row['F_IDX']."</td>
-                            <td><a href='#' onclick=javascript:viewDetail('".$row['F_IDX']."')>".$row['F_TITLE']."</a></td>
-                            <td>".$row['F_WRITER']."</td>
-                            <td>".$row['F_HIT']."</td>
-                            <td>".$row['F_WRITE_DATE']."</td>
-                       </tr>";
+            $count = $controller->db->result->num_rows;
+            if($count>0){
+                while($row = $controller->db->result->fetch_assoc()){
+                    echo "<tr>
+                                <td>".$row['F_IDX']."</td>
+                                <td><a href='#' onclick=javascript:viewDetail('".$row['F_IDX']."')>".$row['F_TITLE']."</a></td>
+                                <td>".$row['F_WRITER']."</td>
+                                <td>".$row['F_HIT']."</td>
+                                <td>".$row['F_WRITE_DATE']."</td>
+                           </tr>";
+                }
+            }else{
+                echo "<tr><td colspan='5'>검색된 내용이 없습니다.</td></tr>";
             }
             $controller->db->DBOut();
         ?>
