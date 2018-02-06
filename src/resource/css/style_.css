@@ -1,9 +1,10 @@
 /*--------------------공통부분--------------------------*/
 body{
     margin: 0;
-    background: url("../image/background_img.jpg") no-repeat;
-    background-size: cover;
+/*    background: url("../image/background_img.jpg") no-repeat;
+    background-size: cover;*/
 }
+
 a{
     text-decoration:none;
     color: #000;
@@ -13,75 +14,191 @@ a:hover
     text-decoration:none;
     color: #a294a5;
 }
+.main_logo{
+     font-size: 70px; font-weight: 700;
+     position: absolute;
+     top:15%;
+     left:10%;
+ }
+.w100{  width:87px;  }
+.w130{  width: 130px }
+.w200{  width: 200px;  }
+.w300{  width: 300px;  }
+.w310{  width: 310px;  }
+.w400{  width: 405px;  }
+.w750{  width: 775px;  }
+.h40{   height: 40px}
+.h60{  height: 60px;  }
+.h50{  height:50px;  }
+.h300{  height: 300px;  }
+.input
+{
+    border: 0;
+    font-size: 15px;
+    padding-left: 10px;
+}
+.input1
+{
+    font-size: 15px;
+    padding-left: 10px;
+
+}
+.button{
+    background-color: #000B33;
+    color: white;
+    outline: 0;
+    border:0;
+}
+.button1{
+    height:40px;
+    width: 100px;
+}
+hr{
+    width: 400px;
+}
 /*----------------------------header--------------*/
 #header{
     height:10%;
     width: 100%;
     background-color: gainsboro;
     margin: 0;
+    position: relative;
 }
 .header_logo{
-    font-size: 30px; font-weight: 700;
-    margin-left: 5%;
+    font-size: 35px; font-weight: 700;
+    position: relative;
+    top:10px;
+    left:50px;
 }
-.header_login_form
-{
-    margin-left: 28%;
-}
-.header_login
-{
-    height:10%;
-    width:30%;
-}
-.header_button{
-    height:50%;
-    width: 17%;
-    margin-top: 10px;
-    background-color: #000B33;
-    color: white;
-    outline: 0;
-    border:0;
-}
-.main_logo{
-    font-size: 70px; font-weight: 700;
+.header_button1{
     position: absolute;
-    top:15%;
-    left:10%;
+    top:20%;
+    left: 1100px;
 }
+.header_button2{
+    position: absolute;
+    top:20%;
+    left: 985px;
+}
+
 /*-----------------------------------center------------------*/
 #main_center{
-    height:85%;
+    height:82%;
     width:100%;
+    position: relative;
 }
 #center{
-    height:90%;
+    height:85%;
     width:100%;
+    position: relative;
+}
+.board{
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    top: 20%;
+    left:60%;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+.ex{
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    left:60%;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+.ex2{
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    top: 42%;
+    left:44%;
+    border: 2px solid white;
+    border-radius: 5px;
 }
 /*-----------------------------------footer------------------*/
 #footer{
-    height: 15%;
+    height: 18%;
     width: 100%;
-    letter-spacing: normal;
     background-color: gainsboro;
 }
-span
+/*----------------------------------login---------------------*/
+.login_form{
+    position: relative;
+    top:150px;
+    left: 500px;
+}
+
+#all{
+    margin-top: 4%;
+    margin-left: 35%;
+}
+.login_table {
+    border-collapse: collapse;
+    text-align: center;
+}
+.login_td {
+    padding: 8px;
+}
+/*--------------------------------board----------------------*/
+.board_button1{
+    position: absolute;
+    left: 1065px;
+}
+.board_button2{
+    position: absolute;
+    left: 950px;
+}
+.board_button3{
+    position: absolute;
+    left: 835px;
+}
+.board_table {
+    position: relative;
+    left: 18%;
+    top: 60px;
+    width: 900px;
+    border-collapse: collapse;
+    font-size: 15px;
+    font-weight: 700;
+    border: 1px solid black;
+}
+.board_th{
+    border: 1px solid black;
+    width: 150px;
+    height: 50px;
+    font-size: 17px;
+    background-color: lavender;
+}
+.board_td1{
+    border: 1px solid black;
+}
+.board_td2{
+    border: 1px solid black;
+    padding-left: 10px;
+}
+.board_search{
+    position: absolute;
+    left: 18%;
+
+}
+.pageNavigation
 {
-    height: 90%;
-    width:32%;
+
+    position: absolute;
+    left: 700px;
+}
+.pageNavigation a
+{
     float: left;
-    padding:10px 0 0 10px;
+    padding: 8px 16px;
+    border-radius: 5px;
 }
-.login
+.pageNavigation a:hover
 {
-    height:40%;
-    width:48%;
-}
-.button{
-    height:40%;
-    width: 97%;
-    margin-top: 10px;
-    background-color: #000B33;
-    color: white;
-    outline: 0;
-    border:0;
+    background-color: #dddddd;
+    border-radius: 5px;
 }

@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: BBUGGE
- * Date: 2018-02-01
- * Time: 오전 4:49
- */
+
     require_once '../param.php';
     require_once '../config/DB.php';
 
@@ -32,6 +27,7 @@
         echo "<script>alert('쿼리실행 실패!!');location.href='/'</script>";
     }
 ?>
+
 <div id="header">
     <?php
     require_once '../header.php';
@@ -54,36 +50,38 @@
     }
 </script>
 <div id="center">
-    <table>
+    <p>
+    <table class="board_table">
         <tr>
-            <th>작성자</th>
-            <td><?php echo $data['F_WRITER']?></td>
-            <th>조회수</th>
-            <td><?php echo $data['F_HIT']?></td>
+            <th class="board_th">작성자</th>
+            <td class="board_td2 w300"><?php echo $data['F_WRITER']?></td>
+            <th class="board_th">조회수</th>
+            <td class="board_td2 w300"><?php echo $data['F_HIT']?></td>
         </tr>
         <tr>
-            <th>제목</th>
-            <td><?php echo $data['F_TITLE']?></td>
-            <th>등록일</th>
-            <td><?php echo $data['F_WRITE_DATE']?></td>
+            <th class="board_th">제목</th>
+            <td class="board_td2 w300 font"><?php echo $data['F_TITLE']?></td>
+            <th class="board_th">등록일</th>
+            <td class="board_td2 w300"><?php echo $data['F_WRITE_DATE']?></td>
         </tr>
         <tr>
-            <th>내용</th>
-            <td colspan="3">
-                <?php echo $data['F_CONTENT']?>
-            </td>
+            <th class="board_th">내용</th>
+            <td class="board_td2 h300" colspan="3"><?php echo $data['F_CONTENT']?></td>
         </tr>
     </table>
-    <div>
-        <button type="button" onclick="updateBoard('<?php echo $data['F_IDX']?>');">수정</button>
+    </p>
+    <br> <br>
+    <p>
         <?php
             if($data['F_WRITER'] == $param->session('client')['F_ID']){
-                echo "<button type='button' onclick=deleteBoard('".$data['F_IDX']."')>삭제</button>";
+                echo " <button class='button button1 board_button3 input' type='button' onclick=updateBoard('" .$data['F_IDX']."')>수정</button> 
+                <button class='button button1 board_button2 input' type='button' onclick=deleteBoard('".$data['F_IDX']."')>삭제</button>";
             }
         ?>
-    </div>
-    <div>
-        <button type="button" onclick="location.href='/board/board.php'">목록</button>
-    </div>
+        <button class="button button1 board_button1 input" type="button" onclick="location.href='/board/board.php'">목록</button>
+    </p>
+
+
+
     <?php  $db->DBOut();?>
 </div>

@@ -6,37 +6,8 @@
     $param = new param;
 
 ?>
-    <style>
-        #all{
-            margin-left: 35%;
-        }
-        .input{
-            width: 300px;
-            height:50px;
-            font-size: 15px;
-            margin-bottom: 10px;
-            float: right;
-            padding-left:10px;
-        }
-        .join
-        {
-            font-size: 40px;
-            text-align: center;
 
-        }
-        .yy{
-            width: 100px;
-            height:50px;
-            margin-bottom: 10px;
 
-        }
-        .mm{
-            width:91px;
-            height:50px;
-            margin-bottom: 10px;
-        }
-    </style>
-    <body>
 <div id="header">
     <?php
     include "../header.php";
@@ -123,29 +94,28 @@
         $('#joinForm').submit();
     }
 </script>
+
 <div id="center">
         <div id="all">
-            <form id="joinForm" method="post" action="/login/login_reg_proc.php">
+            <form id="joinForm" method="post" action="./login_reg_proc.php">
                 <input type="hidden" name="birth_day" id="birth_day">
-                <table>
-                    <tr><td colspan="3" class="join">회원가입</td></tr>
-                    <tr><td>&nbsp;</td></tr>
+                <table class="login_table">
                     <tr>
-                        <td colspan="2"><input class="" type="text" name="id" id="id" placeholder="아이디" onkeydown="javascript:if(event.keyCode==13){idCheck();}else{confirmID=false;}"></td>
-                        <td><button type="button" onclick="idCheck();">중복확인</button></td>
+                        <td colspan="2" class="login_td"><input class="input1 w200 h50" type="text" name="id" id="id" placeholder="아이디" onkeydown="javascript:if(event.keyCode==13){idCheck();}else{confirmID=false;}"></td>
+                        <td class="login_td"><button type="button" class="button h50 w100 " onclick="idCheck();">중복확인</button></td>
                     </tr>
-                    <tr><td colspan="3"><input class="input" type="password" name="passwd" id="passwd"  placeholder="비밀번호"></td></tr>
-                    <tr><td colspan="3"><input class="input" type="password" name="passwd_check" id="passwd_check"  placeholder="비밀번호 확인"></td></tr>
-                    <tr><td colspan="3"><input class="input onlyKor" type="text" name="name" id="name" placeholder="이름"></td></tr>
+                    <tr><td class="login_td" colspan="3"><input class="input1 w300 h50" type="password" name="passwd" id="passwd"  placeholder="비밀번호"></td></tr>
+                    <tr><td class="login_td" colspan="3"><input class="input1 w300 h50" type="password" name="passwd_check" id="passwd_check"  placeholder="비밀번호 확인"></td></tr>
+                    <tr><td class="login_td" colspan="3"><input class="input1 w300 h50 onlyKor" type="text" name="name" id="name" placeholder="이름"></td></tr>
                     <tr>
-                        <td>
+                        <td  class="login_td" colspan="3">
                             <input type="radio" name="gender" id="gender_M" value="0" checked><label for="gender_M">남자</label>
                             <input type="radio" name="gender" id="gender_F" value="1"><label for="gender_F">여자</label>
                         </td>
                     </tr>
                     <tr>
-                        <td><input class="yy onlyNum" type="text" maxlength="4" name="yy" id ="yy" placeholder="년(4자)" ></td>
-                        <td><select class="mm" name="mm" id="mm" title="월">
+                        <td class="login_td"><input class="input1 w100 h50 onlyNum" type="text" maxlength="4" name="yy" id ="yy" placeholder="년(4자)" ></td>
+                        <td class="login_td"><select class="input1 w100 h50" name="mm" id="mm" title="월">
                                 <option value="">월</option>
                                 <option value="1" >1</option>
                                 <option value="2" >2</option>
@@ -161,18 +131,18 @@
                                 <option value="12" >12</option>
                             </select>
                         </td>
-                        <td><input class="yy onlyNum" name="dd" type="text"  id="dd"  maxlength="2" placeholder="일"> </td>
+                        <td class="login_td"><input class="input1 w100 h50" name="dd" type="text"  id="dd"  maxlength="2" placeholder="일"> </td>
                     </tr>
-                    <tr><td colspan="3"><input class="input" type="text" name="address" id="address"  placeholder="주소"></td></tr>
+                    <tr><td class="login_td" colspan="3"><input class="input1 w300 h50" type="text" name="address" id="address"  placeholder="주소"></td></tr>
                     <tr>
-                        <td><input class="yy onlyNum" type="text" name="phone_num1" id="phone_num1"></td>
-                        <td><input class="yy onlyNum" type="text" name="phone_num2" id="phone_num2"></td>
-                        <td><input class="yy onlyNum" type="text" name="phone_num3" id="phone_num3"></td>
+                        <td class="login_td"><input class="input1 w100 h50 onlyNum" type="text" name="phone_num1" maxlength="3"placeholder="010" id="phone_num1"></td>
+                        <td class="login_td"><input class="input1 w100 h50 onlyNum" type="text" name="phone_num2" maxlength="4" id="phone_num2"></td>
+                        <td class="login_td"><input class="input1 w100 h50 onlyNum" type="text" name="phone_num3" maxlength="4" id="phone_num3"></td>
                     </tr>
-                    <tr><td colspan="3"><button class="input" type="button" onclick="join();">가입하기</button></td></tr>
+                    <tr><td class="login_td" colspan="3"><button class="input w300 h50 button" type="button" onclick="join();">가입하기</button></td></tr>
                 </table>
             </form>
         </div>
-    </body>
+</div>
 
 

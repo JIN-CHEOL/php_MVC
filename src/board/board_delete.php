@@ -8,9 +8,9 @@
 require_once '../param.php';
 $param = new param;
 ?>
-<link rel="stylesheet" href="/resource/css/style_.css">
-<script src="/resource/js/jquery-3.2.1.min.js"></script>
-<script src="/resource/js/common_util.js"></script>
+<link rel="stylesheet" href="../resource/css/style_.css">
+<script src="../resource/js/jquery-3.2.1.min.js"></script>
+<script src="../resource/js/common_util.js"></script>
 
 
 <script type="text/javascript">
@@ -22,16 +22,17 @@ $param = new param;
         $('#deleteForm').submit();
     }
 </script>
-게시물 삭제 페이지
-<form id="deleteForm" method="post" action="/board/board_delete_proc.php">
+<div align="center">
+    <br>
+게시물 삭제
+    <br>
+<hr>
+<form id="deleteForm" method="post" action="./board_delete_proc.php">
     <input type="hidden" name="idx" value="<?php echo $param->post('idx')?>">
-    <table>
-        <tr>
-            <th>비밀번호</th>
-            <td><input type="password" name="passwd" id="passwd"></td>
-        </tr>
-    </table>
+   비밀번호 &nbsp;&nbsp;&nbsp;
+   <input class="input1 w200 h50 " type="password" name="passwd" id="passwd">
 </form>
-<div>
-    <button type="button" onclick="deleteBoardProc()">삭제하기</button>
+
+    <button class="button h50 w300" type="button" onclick="deleteBoardProc()">삭제하기</button>
+
 </div>

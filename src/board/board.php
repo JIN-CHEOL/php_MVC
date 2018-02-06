@@ -1,11 +1,5 @@
 <link rel="stylesheet" href="../resource/css/style_.css">
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: BBUGGE
- * Date: 2018-01-17
- * Time: 오후 4:33
- */
 require_once "boardController.php";
 require_once "../commonController.php";
 
@@ -35,6 +29,11 @@ $param = $controller->param;
         var search_col = $('#search_col').val();
         var search_text = $('#search_text').val();
         var form = new CommonForm('commonForm');
+
+        if(isNull($('#search_text'))){
+            alert("검색어를 입력하세요.");
+        }
+
         form.addParam('search_col',search_col);
         form.addParam('search_text',search_text);
         form.setUrl('/board/board.php');
@@ -52,32 +51,36 @@ $param = $controller->param;
     }
 </script>
 <div id="center">
-    <div>
-        <select name="search_col" id="search_col">
+    <p class="board_search">
+        <select class="h40 w100" name="search_col" id="search_col">
             <option value="title">제목</option>
             <option value="writer">작성자</option>
+            <option value="content">내용</option>
         </select>
-        <input type="text" name="search_text" id="search_text" value="<?php echo $controller->param->post('search_text')?>">
-        <button type="button" onclick="searchBoard()">조회</button>
-    </div>
-    <table>
+        <input class="w200 h40 input1" type="text" name="search_text" id="search_text" value="<?php echo $controller->param->post('search_text')?>">
+        <button class="button button1 " type="button" onclick="searchBoard()">조회</button>
+
+    </p>
+
+<p>
+    <table class="board_table">
         <tr>
-            <th>No.</th>
-            <th>제목</th>
-            <th>등록자</th>
-            <th>조회수</th>
-            <th>등록일</th>
+            <th class="board_th">No.</th>
+            <th class="board_th">제목</th>
+            <th class="board_th">등록자</th>
+            <th class="board_th">조회수</th>
+            <th class="board_th">등록일</th>
         </tr>
         <?php
             $count = $controller->db->result->num_rows;
             if($count>0){
                 while($row = $controller->db->result->fetch_assoc()){
-                    echo "<tr>
-                                <td>".$row['F_ROWNUM']."</td>
-                                <td><a href='#' onclick=javascript:viewDetail('".$row['F_IDX']."')>".$row['F_TITLE']."</a></td>
-                                <td>".$row['F_WRITER']."</td>
-                                <td>".$row['F_HIT']."</td>
-                                <td>".$row['F_WRITE_DATE']."</td>
+                    echo "<tr style='text-align: center'>
+                                <td class='board_td1 h50'>".$row['F_IDX']."</td>
+                                <td class='board_td1 h50 w200'><a href='#' onclick=javascript:viewDetail('".$row['F_IDX']."')>".$row['F_TITLE']."</a></td>
+                                <td class='board_td1 h50'>".$row['F_WRITER']."</td>
+                                <td class='board_td1 h50'>".$row['F_HIT']."</td>
+                                <td class='board_td1 h50 w300'>".$row['F_WRITE_DATE']."</td>
                            </tr>";
                 }
             }else{
@@ -85,8 +88,10 @@ $param = $controller->param;
             }
             $controller->db->DBOut();
         ?>
+
     </table>
-    <div class="pageNavigation">
+</p><br><br>
+    <p class="pageNavigation">
         <?php
         $page = floor($controller->currPage / $controller->pageSize) * $controller->pageSize +1;
         if($controller->currPage > $controller->pageSize)
@@ -98,15 +103,17 @@ $param = $controller->param;
         }
         while($i<=$controller->countPage){
             echo "<a href='#' onclick=movePage(".$i.");>".$i."</a>";
-          $i=$i+1;
-       }
-       $controller->countPage=10;
+            $i=$i+1;
+        }
+        $controller->countPage=10;
         if($controller->currPage > $controller->totalRow-floor($controller->totalRow / $controller->countPage))
             echo "<a href='#' onclick='movePage(".($page+10).");'>다음</a>";
 
-        //echo "<br> currPage:".$controller->currPage."// totalRow:".$controller->totalRow."//countPage:".$controller->countPage."//firstRow:".$controller->firstRow;
         ?>
-    </div>
-    <div><button type="button" onclick="insertBoard();">글등록</button></div>
+    </p>
+<br>
+    <p>
+        <button type="button" class=" button button1 board_button1" onclick="insertBoard();">글등록</button>
+    </p>
 </div>
 

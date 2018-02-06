@@ -37,32 +37,33 @@ $param = $controller->param;
     }
 
 </script>
-<html lang='ko'>
+<style>
+
+    span
+    {
+        height: 90%;
+        width:32%;
+        float: left;
+        padding:10px 0 0 10px;
+    }
+</style>
 
 <body>
-
-
-
-
     <?php
     if($param->session('client')!=null){
-        echo "<span><button id='logout' class=\"button\" type='button' onclick='logout();'>logout</button></span>";
+        echo "<span><button id='logout' class=\"input button h50 w400\" type='button' onclick='logout();'>logout</button></span><span></span>";
     }else{
-        echo "<form id=\"loginForm\" method=\"post\" action=\"/login/login.php\"> 
-               <span><input type=\"text\" class=\"login\" name=\"id\" id=\"client_id\" placeholder=\"ID\" onkeydown=\"javascript:if(event.keyCode==13)login();\">
-            <input type=\"password\" class=\"login\" name=\"passwd\" id=\"client_passwd\" placeholder=\"PASSWORD\" onkeydown=\"javascript:if(event.keyCode==13)login();\">
-
-        <button type=\"button\" class=\"button\" onclick=\"login()\">로그인</button></span>
-        <span><input class=\"button\"type=\"button\" value=\"회원가입\" onclick=\"location.href='login/login_reg.php'\"></span></form>";
+        echo "<span><form id=\"loginForm\" method=\"post\" action=\"./login/login.php\"> 
+               <input type=\"text\" class=\"input h50 w200\" name=\"id\" id=\"client_id\" placeholder=\"ID\" onkeydown=\"javascript:if(event.keyCode==13)login();\">
+            <input type=\"password\" class=\"input h50 w200\" name=\"passwd\" id=\"client_passwd\" placeholder=\"PASSWORD\" onkeydown=\"javascript:if(event.keyCode==13)login();\">
+        <p><button type=\"button\" class=\"input button h50 w400\" onclick=\"login()\">로그인</button></form></p></span>
+        <span><input class=\"input button h50 w400\"type=\"button\" value=\"회원가입\" onclick=\"location.href='login/login_reg.php'\"></span>";
     }
     ?>
 
-
-
-
     <span style="text-align: center">
-    사업자 등록 123468765321321
-</span>
+        사업자 등록 123468765321321
+    </span>
 
 </body>
 </html>

@@ -2,13 +2,6 @@
 <script src="../resource/js/jquery-3.2.1.min.js"></script>
 <script src="../resource/js/common_util.js"></script>
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: BBUGGE
- * Date: 2018-01-06
- * Time: 오후 11:42
- */
-
     require_once "loginController.php";
     require_once "../commonController.php";
 
@@ -17,7 +10,6 @@
 
     $controller->login();
     $param = $controller->param;
-
 ?>
 
 <script type="text/javascript">
@@ -44,21 +36,20 @@
 
 <body>
 <div id="header">
-    <?php
-    require_once '../header.php';
-    ?>
+<span><a href="/" class="header_logo">homepage</a></span>
 </div>
 <div id="center">
-    <form id="loginForm" method="post" action="">
+    <form id="loginForm" method="post" action="login.php" class="login_form">
+        <p><input class="input1 h50 w400" type="text" name="id" id="client_id" placeholder="ID" onkeydown="javascript:if(event.keyCode==13)login();"></p>
+        <p><input class="input1 h50 w400" type="password" name="passwd" placeholder="PW" id="client_passwd" onkeydown="javascript:if(event.keyCode==13)login();"></p>
+        <p><button class="button h50 w400" type="button" onclick="login()">로그인</button></p>
 
-            <input type="text" name="id" id="client_id" onkeydown="javascript:if(event.keyCode==13)login();">
-            <input type="password" name="passwd" id="client_passwd" onkeydown="javascript:if(event.keyCode==13)login();">
-
-        <button type="button" onclick="login()">로그인</button>
-        <button type="button" onclick="location.href='../login/login_reg.php'">회원가입</button>
-        <button type="button" onclick="find_id()">아이디 찾기</button>
-        <button type="button" onclick="find_password()">비밀번호 찾기</button>
-
+        <hr align="left">
+        <p>
+            <button class="button h50 w130" type="button" onclick="location.href='../login/login_reg.php'">회원가입</button>
+            <button class="button h50 w130" type="button" onclick="find_id()">아이디 찾기</button>
+            <button class="button h50 w130" type="button" onclick="find_password()">비밀번호 찾기</button>
+        </p>
 
     </form>
 </div>

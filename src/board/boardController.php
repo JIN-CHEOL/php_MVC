@@ -33,6 +33,8 @@ class boardController
                 $searchCol = "F_TITLE";
             }else if($this->param->post('search_col') =='writer'){
                 $searchCol = "F_WRITER";
+            }else if($this->param->post( 'search_col') == 'content') {
+                $searchCol = "F_CONTENT";
             }
             $searchQuery = "AND ".$searchCol." = '".$this->param->post('search_text')."'";
         }
@@ -44,21 +46,22 @@ class boardController
         $this->countPage = 10;
         $this->firstRow = ($this->currPage*$this->pageSize)-$this->pageSize+1;
 
-        $db->query = "SELECT COUNT(*) AS F_CNT FROM T_BOARD WHERE 1=1 ".$searchQuery;
+        $db->query = "SELECT COUNT(*) AS F_CONTENT FROM T_BOARD WHERE 1=1 ".$searchQuery;
         $db->DBQuery();
         $data = $db->result->fetch_assoc();
-        $this->totalRow = $data['F_CNT'];
+        $this->totalRow = $data['F_CONTENT'];
 //        $this->totalRow = 20;
 
         $db->query = "SELECT * FROM(
                         SELECT 
                         @ROWNUM:=@ROWNUM + 1 AS F_ROWNUM,
                         T_BOARD.F_IDX,
+                        T_BOARD.F_WRITER,
                         T_BOARD.F_TITLE,
                         T_BOARD.F_CONTENT,
-                        T_BOARD.F_WRITER,
                         T_BOARD.F_HIT,
-                        T_BOARD.F_WRITE_DATE
+                        T_BOARD.F_WRITE_DATE, 
+                        T_BOARD.F_BOARD_PASS
                         FROM T_BOARD,(SELECT @ROWNUM:=0)R
                         ORDER BY T_BOARD.F_IDX DESC
                       )T

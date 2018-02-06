@@ -27,45 +27,11 @@
     }
     function logout() {
         location.replace("/login/logout.php");
-        //var id = sessionStorage.getItem('id');
-        //var permit =sessionStorage.getItem('permit');
 
-        //debugger;
-//        alert("로그아웃 되었습니다.");
-//        location.replace("/");
     }
 
 </script>
 
-<style>
-    .board{
-        width: 200px;
-        height: 150px;
-        position: absolute;
-        top: 20%;
-        left:60%;
-        border: 2px solid white;
-        border-radius: 5px;
-    }
-    .ex{
-        width: 200px;
-        height: 150px;
-        position: absolute;
-        top: 42%;
-        left:60%;
-        border: 2px solid white;
-        border-radius: 5px;
-    }
-    .ex2{
-        width: 200px;
-        height: 150px;
-        position: absolute;
-        top: 42%;
-        left:44%;
-        border: 2px solid white;
-        border-radius: 5px;
-    }
-</style>
 
 <body>
 <div id="main_center">

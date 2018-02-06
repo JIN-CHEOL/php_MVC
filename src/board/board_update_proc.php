@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: BBUGGE
- * Date: 2018-02-01
- * Time: 오전 5:56
- */
+
     require_once '../param.php';
     require_once '../config/DB.php';
 

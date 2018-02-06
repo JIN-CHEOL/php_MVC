@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: BBUGGE
- * Date: 2018-01-31
- * Time: 오후 8:51
- */
+
     header("Content-Type: application/json");
     require_once "../param.php";
     require_once "../config/DB.php";
