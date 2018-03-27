@@ -5,14 +5,14 @@
  * Date: 2018-02-01
  * Time: 오전 7:08
  */
-    require_once '../param.php';
-    require_once '../config/DB.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'param.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/config/DB.php';
 
     $param = new param;
     $db = new DB;
     $db->DBConn();
     $db->query = "INSERT INTO 
-                          t_board(
+                          T_BOARD(
                           F_WRITER,
                           F_TITLE,
                           F_CONTENT,
@@ -24,8 +24,8 @@
                           '".$param->post('title')."',
                           '".$param->post('content')."',
                           0,
-                          now(),
-                          password('".$param->post('passwd')."'))";
+                          NOW(),
+                          PASSWORD('".$param->post('passwd')."'))";
     $db->DBQuery();
     echo "<script>
                         window.onload = function(){

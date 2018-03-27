@@ -130,3 +130,9 @@ function is_val(type, e, obj){
         return false;
     }
 }
+function fileDonwload(filePath){
+    $.fileDownload('/Download.html?filePath='+filePath)
+    .done(function(){alert('다운로드 성공');})
+    .fail(function(){alert('다운로드 실패');});
+    return false;
+}

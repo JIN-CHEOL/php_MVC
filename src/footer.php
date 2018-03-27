@@ -1,10 +1,10 @@
-<link rel="stylesheet" href="./resource/css/style_.css">
-<script src="./resource/js/jquery-3.2.1.min.js"></script>
-<script src="./resource/js/common_util.js"></script>
+<link rel="stylesheet" href="/resource/css/style_.css">
+<script src="/resource/js/jquery-3.2.1.min.js"></script>
+<script src="/resource/js/common_util.js"></script>
 <?php
 
-require_once "./indexController.php";
-require_once "./commonController.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/indexController.php";
+require_once$_SERVER['DOCUMENT_ROOT']."/commonController.php";
 $controller = new indexController();
 $common = new commonController;
 

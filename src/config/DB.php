@@ -23,7 +23,7 @@ class DB
          //   echo "데이터 베이스 연동에 성공했습니다.";
         }
         //한글 깨짐 현상
-        header("Content-Type: text/html; charset=UTF-8");
+        //header("Content-Type: text/html; charset=UTF-8");
         $this->db->set_charset("set session character_set_connection=utf8;");
         $this->db->set_charset("set session character_set_results=utf8;");
         $this->db->set_charset("set session character_set_client=utf8;");

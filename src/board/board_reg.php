@@ -1,6 +1,6 @@
 <?php
 
-require_once '../param.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/param.php';
 $param = new param;
     if($param->session('client') == null){
         echo "<script>alert('로그인을 해주세요.');location.href='/login/login.php';</script>";
@@ -8,7 +8,7 @@ $param = new param;
 ?>
 <div id="header">
     <?php
-        require_once '../header.php';
+        require_once $_SERVER['DOCUMENT_ROOT'].'/header.php';
     ?>
 </div>
 <script type="text/javascript">

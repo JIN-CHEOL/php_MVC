@@ -6,14 +6,14 @@
  * Time: 오후 11:33
  */
 
-require_once "../param.php";
-require_once "../config/DB.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/param.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/config/DB.php";
 
 $param = new param;
 $db =new DB;
 $db->DBConn();
 $db->query = "INSERT INTO 
-                t_client(
+                T_CLIENT(
                 F_ID,
                 F_PASSWORD,
                 F_NAME,
@@ -26,14 +26,14 @@ $db->query = "INSERT INTO
                 F_RETIRE_YN) 
                 VALUES(
                 '".$param->post('id')."',
-                password('".$param->post('passwd')."'),
+                PASSWORD('".$param->post('passwd')."'),
                 '".$param->post('name')."',
                 ".$param->post('gender').",
                 DATE('".$param->post('birth_day')."'),
                 '".$param->post('phone_num1')."',
                 '".$param->post('phone_num2')."',
                 '".$param->post('phone_num3')."',
-                now(),
+                NOW(),
                 0)";
 $db->DBQuery();
 if($db->result){

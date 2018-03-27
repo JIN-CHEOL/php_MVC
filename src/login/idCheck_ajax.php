@@ -1,13 +1,13 @@
 <?php
 
     header("Content-Type: application/json");
-    require_once "../param.php";
-    require_once "../config/DB.php";
+    require_once $_SERVER['DOCUMENT_ROOT']."/param.php";
+    require_once $_SERVER['DOCUMENT_ROOT']."/config/DB.php";
 
     $param = new param;
     $db =new DB;
     $db->DBConn();
-    $db->query = "SELECT count(*) AS F_CNT FROM t_client WHERE f_id='".$param->post('id')."'";
+    $db->query = "SELECT COUNT(*) AS F_CNT FROM T_CLIENT WHERE F_ID='".$param->post('id')."'";
     $db->DBQuery();
     if($db->result){
         $data = $db->result->fetch_assoc();

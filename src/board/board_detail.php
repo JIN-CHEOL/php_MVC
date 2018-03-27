@@ -1,12 +1,12 @@
 <?php
 
-    require_once '../param.php';
-    require_once '../config/DB.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/param.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/config/DB.php';
 
     $param = new param;
     $db = new DB;
     $db->DBConn();
-    $db->query = "UPDATE t_board 
+    $db->query = "UPDATE T_BOARD 
                     SET F_HIT = F_HIT + 1 
                     WHERE F_IDX = ".$param->post('idx');
     $db->DBQuery();
@@ -17,7 +17,7 @@
                     F_WRITER,
                     F_HIT,
                     F_WRITE_DATE
-                    FROM t_board 
+                    FROM T_BOARD 
                     WHERE F_IDX = ".$param->post('idx');
     $db->DBQuery();
 
@@ -30,7 +30,7 @@
 
 <div id="header">
     <?php
-    require_once '../header.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/header.php';
     ?>
 </div>
 <script type="text/javascript">

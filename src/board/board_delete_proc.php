@@ -5,15 +5,15 @@
  * Date: 2018-02-01
  * Time: 오전 6:31
  */
-    require_once '../param.php';
-    require_once '../config/DB.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/param.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/config/DB.php';
 
     $param = new param;
     $db = new DB;
     $db->DBConn();
-    $db->query = "DELETE FROM t_board  
+    $db->query = "DELETE FROM T_BOARD  
                         WHERE F_IDX = ".$param->post('idx')."
-                        AND F_BOARD_PASS = password('".$param->post('passwd')."')";
+                        AND F_BOARD_PASS = PASSWORD('".$param->post('passwd')."')";
 
     $db->DBQuery();
 

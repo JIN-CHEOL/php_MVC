@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="../resource/css/style_.css">
-<script src="../resource/js/jquery-3.2.1.min.js"></script>
-<script src="../resource/js/common_util.js"></script>
+<link rel="stylesheet" href="/resource/css/style_.css">
+<script src="/resource/js/jquery-3.2.1.min.js"></script>
+<script src="/resource/js/common_util.js"></script>
 <?php
-    require_once "../param.php";
+    require_once $_SERVER['DOCUMENT_ROOT']."/param.php";
     $param = new param;
 
 ?>
@@ -10,7 +10,7 @@
 
 <div id="header">
     <?php
-    include "../header.php";
+    include $_SERVER['DOCUMENT_ROOT']."/header.php";
     ?>
 </div>
 <script type="text/javascript">

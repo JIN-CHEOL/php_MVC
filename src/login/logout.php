@@ -6,8 +6,9 @@
  * Time: 오후 3:51
  */
 
-    require_once "./loginController.php";
+    require_once $_SERVER['DOCUMENT_ROOT']."/login/loginController.php";
 
     $controller = new loginController();
     $controller->logoutProc();
 ?>
+

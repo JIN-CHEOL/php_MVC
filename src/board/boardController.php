@@ -8,8 +8,8 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-require_once '../param.php';
-require_once '../config/DB.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/param.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/config/DB.php';
 
 class boardController
 {
@@ -23,7 +23,7 @@ class boardController
     public function boardController(){
         $this->param = new param;
     }
-    public function showBoard(){
+    public function boardList(){
         $db = new DB;
         $db->DBConn();
         $searchQuery = "";
@@ -36,7 +36,7 @@ class boardController
             }else if($this->param->post( 'search_col') == 'content') {
                 $searchCol = "F_CONTENT";
             }
-            $searchQuery = "AND ".$searchCol." = '".$this->param->post('search_text')."'";
+            $searchQuery = "AND ".$searchCol." LIKE '%".$this->param->post('search_text')."%'";
         }
 
         $this->currPage = $this->param->post('currPage');
@@ -109,7 +109,7 @@ class boardController
     public function deleteBoard(){
         $db = new DB;
         $db->DBConn();
-        $db->query = "delete from t_board where f_idx = ".$this->param->post('idx');
+        $db->query = "delete from T_BOARD where F_IDX = ".$this->param->post('idx');
         $db->DBQuery();
 
         $db->DBOut();

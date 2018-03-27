@@ -8,8 +8,8 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-    require_once '../param.php';
-    require_once '../config/DB.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/param.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/config/DB.php';
 
 class loginController
 {
@@ -23,7 +23,7 @@ class loginController
     public function login() {
         $db = new DB;
         $db->DBConn();
-        $db->query = "SELECT 
+        $db->query = "SELECT
                       F_ID,
                       F_PASSWORD,
                       F_NAME,
@@ -34,8 +34,8 @@ class loginController
                       F_PHONE_NUM3,
                       F_JOIN_DATE,
                       F_RETIRE_YN
-                      FROM T_CLIENT 
-                      WHERE F_ID='".$this->param->POST('id')."' 
+                      FROM T_CLIENT
+                      WHERE F_ID='".$this->param->POST('id')."'
                       AND F_PASSWORD=PASSWORD('".$this->param->POST('passwd')."')";
         $db->DBQuery();
         $this->loginProc($db);
@@ -63,8 +63,11 @@ class loginController
         unset($_SESSION['client']);
         session_destroy();
 
+
         echo "<script>alert('로그아웃 되었습니다.');location.replace('/')</script>";
     }
 }
 
 ?>
+
+

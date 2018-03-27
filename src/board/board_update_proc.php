@@ -1,12 +1,12 @@
 <?php
 
-    require_once '../param.php';
-    require_once '../config/DB.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/param.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/config/DB.php';
 
     $param = new param;
     $db = new DB;
     $db->DBConn();
-    $db->query = "UPDATE t_board 
+    $db->query = "UPDATE T_BOARD 
                     SET F_TITLE = '".$param->post('title')."', 
                     F_CONTENT = '".$param->post('content')."' 
                     WHERE F_IDX = ".$param->post('idx');

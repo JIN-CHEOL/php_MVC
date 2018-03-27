@@ -1,18 +1,18 @@
-<link rel="stylesheet" href="../resource/css/style_.css">
+<link rel="stylesheet" href="/resource/css/style_.css">
 <?php
-require_once "boardController.php";
-require_once "../commonController.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/board/boardController.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/commonController.php";
 
 $controller = new boardController();
 $common = new commonController;
 
-$controller->showBoard();
+$controller->boardList();
 $param = $controller->param;
 ?>
 
 <div id="header">
     <?php
-    require_once '../header.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/header.php';
     ?>
 </div>
 <script type="text/javascript">
@@ -76,7 +76,7 @@ $param = $controller->param;
             if($count>0){
                 while($row = $controller->db->result->fetch_assoc()){
                     echo "<tr style='text-align: center'>
-                                <td class='board_td1 h50'>".$row['F_IDX']."</td>
+                                <td class='board_td1 h50'>".$row['F_ROWNUM']."</td>
                                 <td class='board_td1 h50 w200'><a href='#' onclick=javascript:viewDetail('".$row['F_IDX']."')>".$row['F_TITLE']."</a></td>
                                 <td class='board_td1 h50'>".$row['F_WRITER']."</td>
                                 <td class='board_td1 h50'>".$row['F_HIT']."</td>
